@@ -24,7 +24,7 @@ class PluginFieldSelfAliasTest extends TestCase
     /**
      * @var IRepository|null
      */
-    protected ?ExtensionRepository $testRepo = null;
+    protected ?IRepository $testRepo = null;
 
     protected function setUp(): void
     {
