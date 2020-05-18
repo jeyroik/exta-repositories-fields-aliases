@@ -4,7 +4,7 @@ use PHPUnit\Framework\TestCase;
 use Dotenv\Dotenv;
 use extas\components\plugins\PluginRepository;
 use extas\components\plugins\Plugin;
-use extas\components\plugins\repositories\PluginFieldSelfAlias;
+use extas\components\plugins\repositories\PluginFieldSampleName;
 use tests\TestEntityRepository;
 use tests\TestEntity;
 use extas\interfaces\repositories\IRepository;
@@ -37,7 +37,7 @@ class PluginFieldSelfAliasTest extends TestCase
 
     public function tearDown(): void
     {
-        $this->pluginRepo->delete([Plugin::FIELD__CLASS => PluginFieldSelfAlias::class]);
+        $this->pluginRepo->delete([Plugin::FIELD__CLASS => PluginFieldSampleName::class]);
         $this->testRepo->delete([TestEntity::FIELD__NAME => 'test']);
     }
 
@@ -73,7 +73,7 @@ class PluginFieldSelfAliasTest extends TestCase
     protected function installPlugin()
     {
         $this->pluginRepo->create(new Plugin([
-            Plugin::FIELD__CLASS => PluginFieldSelfAlias::class,
+            Plugin::FIELD__CLASS => PluginFieldSampleName::class,
             Plugin::FIELD__STAGE => 'extas.test.create.before'
         ]));
     }
